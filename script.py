@@ -126,7 +126,7 @@ def opcion_1(): # Sunflower
     pygame.init()
 
     # Cargar la música
-    pygame.mixer.music.load("song.mp3")  # Cambia esto por la ruta de tu archivo de música
+    pygame.mixer.music.load("song.mp3")  
 
     # Declarar la letra con su respectivo tiempo
     letra = [
