@@ -3,9 +3,12 @@ import time
 from colorama import Fore, Style, init
 import pygame
 
-init()
+# Creado por lovely
+# https://x.com/Lovelxlol
 
+init() # iniciar coloroma 
 
+# Declarar variables que se van a usar
 texto = "Creador por @stevendz.28" 
 texto_part1 = "                                                Creado por "
 texto_morado = "@"
@@ -86,22 +89,26 @@ como al principio.
 ¿Lo has sentido también?
 
 """
+# Limpiar pantalla
 os.system("cls")
-# Parte 1
+
+# Comienza el script
+# Sección principal
 print(hola_grande)
 print(lineas + "\n")
 print(texto_part1 + Fore.MAGENTA + texto_morado + Fore.LIGHTYELLOW_EX + texto_amarillo + Style.RESET_ALL)
 
-time.sleep(10)  # Esperar 4 segundos antes de cerrar
+time.sleep(10)  #congela por 10 segundos
 os.system("cls")
 
-# Parte2
+# Poema 
 print(amor)
 print("                                                                     Inspirado en " + Fore.MAGENTA + autores_1 + Fore.RESET + " , adaptado por " + Fore.MAGENTA + adaptado_2 + Fore.RESET + "." )
 input()
 
 os.system("cls")
 
+# Menu, en el cual se eligirá que músicas escuchar 
 def menu_1():
     print("¿Qué deseas hacer? - tienes el poder. Pero no los huevos!\n")
     print(Fore.LIGHTYELLOW_EX + op_1 + Fore.RESET)
@@ -109,19 +116,19 @@ def menu_1():
     print(Fore.LIGHTRED_EX + op_3 + Style.RESET_ALL)
     print(Fore.LIGHTBLUE_EX + op_4 + Style.RESET_ALL)
 
-def opcion_1():
+def opcion_1(): # Sunflower
     os.system("cls")  
     print("Iniciando..")
     time.sleep(2)
     os.system("cls")
 
-    # Inicializar pygame
+    # Inicializar librería pygame
     pygame.init()
 
     # Cargar la música
     pygame.mixer.music.load("song.mp3")  # Cambia esto por la ruta de tu archivo de música
 
-    # Definir la letra de la canción con sus tiempos
+    # Declarar la letra con su respectivo tiempo
     letra = [
         (0.5, "\n♪ Pensando de una mala manera ♪"),
         (1.7, "♪ Perdiendo el agarré ♪\n"),
@@ -150,14 +157,14 @@ def opcion_1():
             while True:
                 # Calcular el tiempo transcurrido
                 tiempo_actual = time.time() - inicio
-                # Si es el momento de mostrar la línea, imprímela y sal del bucle
+                # Si es el momento de mostrar la línea, se imprime y sale del bucle
                 if tiempo_actual >= tiempo:
                     if tiempo == 27.9:  # Si es la línea que quieres colorear
                         print(Fore.LIGHTYELLOW_EX + linea + Style.RESET_ALL)  # Amarillo
                     else:
                         print(linea)  # Otras líneas en color normal
                     break
-                time.sleep(0.1)  # Esperar un poco para no consumir demasiada CPU
+                time.sleep(0.1) 
 
         # Esperar a que termine la música
         while pygame.mixer.music.get_busy():
@@ -169,59 +176,52 @@ def opcion_1():
     # Finalizar pygame
     pygame.quit()
     os.system("cls")
-def opcion_2():
+def opcion_2():  #Tiroteo 
+
     os.system("cls")  
     print("Iniciando..")
     time.sleep(2)
     os.system("cls")
 
-    # Inicializar pygame
     pygame.init()
 
-    # Cargar la música
-    pygame.mixer.music.load("song_1.mp3")  # Cambia esto por la ruta de tu archivo de música
+    pygame.mixer.music.load("song_1.mp3") 
 
-    # Definir la letra de la canción con sus tiempos y colores
     letra = [
-        (0.5, "\n♪\n", Fore.RED),  # Rojo
-        (3.4, "♪ Se me congela el mundo ♪", Fore.LIGHTYELLOW_EX),  # Amarillo
-        (5, "♪ Siempre que nos vemos ♪\n", Fore.LIGHTRED_EX),  # Rojo
-        (7.8, "♪ Discutir contigo ♪", Fore.LIGHTBLUE_EX),  # Azul
-        (9.5, "♪ Es como un tiroteo ♪", Fore.LIGHTMAGENTA_EX),  # Magenta
-        (12, "♪ Y pienso morirme primero ♪\n", Fore.LIGHTCYAN_EX),  # Cian
-        (15, "♪ Oh ♪", Fore.LIGHTGREEN_EX),  # Verde
-        (16, "♪ Oh ♪", Fore.LIGHTGREEN_EX),  # Verde
-        (16.5, "♪ Oh ♪", Fore.LIGHTGREEN_EX),  # Verde
-        # Agrega más líneas con sus tiempos y colores
+        (0.5, "\n♪\n", Fore.RED),  
+        (3.4, "♪ Se me congela el mundo ♪", Fore.LIGHTYELLOW_EX),  
+        (5, "♪ Siempre que nos vemos ♪\n", Fore.LIGHTRED_EX),  
+        (7.8, "♪ Discutir contigo ♪", Fore.LIGHTBLUE_EX),  
+        (9.5, "♪ Es como un tiroteo ♪", Fore.LIGHTMAGENTA_EX),  
+        (12, "♪ Y pienso morirme primero ♪\n", Fore.LIGHTCYAN_EX),  
+        (15, "♪ Oh ♪", Fore.LIGHTGREEN_EX),  
+        (16, "♪ Oh ♪", Fore.LIGHTGREEN_EX),  
+        (16.5, "♪ Oh ♪", Fore.LIGHTGREEN_EX),  
     ]
 
-    # Función para mostrar la letra sincronizada
     def mostrar_letra(letra):
-        inicio = time.time()  # Tiempo de inicio de la reproducción
-        pygame.mixer.music.play()  # Reproducir la música
+        inicio = time.time()  
+        pygame.mixer.music.play()  
 
         for tiempo, linea, color in letra:
             while True:
-                # Calcular el tiempo transcurrido
                 tiempo_actual = time.time() - inicio
-                # Si es el momento de mostrar la línea, imprímela y sal del bucle
                 if tiempo_actual >= tiempo:
-                    print(color + linea + Style.RESET_ALL)  # Imprimir en el color correspondiente
+                    print(color + linea + Style.RESET_ALL)  
                     break
-                time.sleep(0.1)  # Esperar un poco para no consumir demasiada CPU
+                time.sleep(0.1)  
 
-        # Esperar a que termine la música
         while pygame.mixer.music.get_busy():
             time.sleep(0.1)
 
-    # Llamar a la función para mostrar la letra
+
     mostrar_letra(letra)
 
-    # Finalizar pygame
+    
     pygame.quit() 
     os.system("cls")      
-def opcion_3():
-    # Limpiar pantalla e iniciar
+def opcion_3(): # Te quiero tanto, tanto 
+
     os.system("cls")
     print("Iniciando..")
     time.sleep(2)
@@ -229,51 +229,43 @@ def opcion_3():
 
     pygame.init()
 
-    # Cargar la música
-    pygame.mixer.music.load("song_2.mp3")  # Cambia esto por la ruta de tu archivo de música
+    pygame.mixer.music.load("song_2.mp3")  
 
-    # Definir la letra de la canción con sus tiempos y colores
     letra = [
-        (0.5, "\n♪ Si tal vez ♪", Fore.RESET),  # Rojo
-        (3.9, "♪ Detalle a detalle ♪\n", Fore.RESET),  # Amarillo
-        (7, "♪ Podrias conquistarme ♪", Fore.RESET),  # Rojo
-        (9.3, "♪ Seria tuya ♪", Fore.RESET),  # Azul
-        (12.7, "♪ Te quiero ♪\n", Fore.LIGHTRED_EX),  # Magenta
-        (13.5, "♪ Tanto ♪", Fore.RESET),  # Cian
-        (14.2, "♪ Tanto ♪", Fore.RESET),  # Verde
+        (0.5, "\n♪ Si tal vez ♪", Fore.RESET),  
+        (3.9, "♪ Detalle a detalle ♪\n", Fore.RESET), 
+        (7, "♪ Podrias conquistarme ♪", Fore.RESET), 
+        (9.3, "♪ Seria tuya ♪", Fore.RESET), 
+        (12.7, "♪ Te quiero ♪\n", Fore.LIGHTRED_EX), 
+        (13.5, "♪ Tanto ♪", Fore.RESET), 
+        (14.2, "♪ Tanto ♪", Fore.RESET), 
         (15, "♪ Tanto ♪", Fore.RESET),
         (15.8, "♪ Tanto ♪", Fore.RESET),
-        (16.6, "♪ Tanto ♪\n", Fore.RESET),  # Verde
+        (16.6, "♪ Tanto ♪\n", Fore.RESET), 
         (17.8, "♪ Cada un poco mas ♪\n", Fore.RESET),
-        (22, "♪", Fore.RESET),  # Verde
-         # Agrega más líneas con sus tiempos y colores
+        (22, "♪", Fore.RESET),  
        ]
 
-    # Función para mostrar la letra sincronizada
     def mostrar_letra(letra):
-        inicio = time.time()  # Tiempo de inicio de la reproducción
-        pygame.mixer.music.play()  # Reproducir la música
+        inicio = time.time()  
+        pygame.mixer.music.play()  
 
         for tiempo, linea, color in letra:
             while True:
-                # Calcular el tiempo transcurrido
                 tiempo_actual = time.time() - inicio
-                # Si es el momento de mostrar la línea, imprímela y sal del bucle
                 if tiempo_actual >= tiempo:
-                    print(color + linea + Style.RESET_ALL)  # Imprimir en el color correspondiente
+                    print(color + linea + Style.RESET_ALL)  
                     break
-                time.sleep(0.1)  # Esperar un poco para no consumir demasiada CPU
+                time.sleep(0.1)  
 
-        # Esperar a que termine la música
         while pygame.mixer.music.get_busy():
             time.sleep(0.1)
 
-    # Llamar a la función para mostrar la letra
     mostrar_letra(letra)
 
-    # Finalizar pygame
     pygame.quit()
     os.system("cls")
+
 # Función principal
 def main():
     while True:
@@ -290,7 +282,7 @@ def main():
             print("Saliendo del Script")
             time.sleep(2)
             break
-        else:
+        else: # Si es que se escribe algun número que no se muestra en el menu
             os.system("cls")
             print("Opción no válida. Por favor escriba bien cabeza de cholito!")
             time.sleep(3)
